@@ -1,35 +1,28 @@
 <template>
   <section
-  class="relative w-full h-screen overflow-hidden flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8"
->
+    class="relative w-full h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 bg-animated"
+  >
+    <!-- 🌟 Floating Dots -->
+    <div class="absolute top-10 left-10 w-4 h-4 bg-primary rounded-full animate-ping"></div>
+    <div class="absolute bottom-20 right-16 w-3 h-3 bg-cyan-400 rounded-full animate-bounce"></div>
 
-    <!-- 🔧 Fullscreen background -->
-    <div
-      ref="vantaRef"
-      class="absolute inset-0 z-0"
-      style="pointer-events: none"
-    ></div>
-
-    <!-- 🌟 Foreground content -->
-   <div class="z-10 w-full max-w-4xl mx-auto animate-fade-in">
+    <!-- 🌟 Foreground Content -->
+    <div class="z-10 w-full max-w-4xl mx-auto animate-fade-in">
       <div class="px-4 sm:px-10">
-        <h1
-          class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 text-primary leading-tight"
-        >
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-cyan-400 text-transparent bg-clip-text leading-tight animate-float">
           Ahmad Shwan
         </h1>
-        <h2
-          class="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-4"
-        >
+
+        <h2 class="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-4">
           Full-Stack Software Developer
         </h2>
 
-        <!-- Typing Effect -->
-        <p class="text-sm sm:text-base md:text-lg text-gray-300 min-h-[2rem] mb-6">
+        <!-- 🧠 Typing Effect -->
+        <p class="text-sm sm:text-base md:text-lg text-gray-300 min-h-[2rem] mb-6 animate-fade-loop">
           <span ref="typedText"></span>
         </p>
 
-        <!-- CTA Buttons -->
+        <!-- 🎯 CTA Buttons -->
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="#projects"
@@ -38,19 +31,18 @@
             View Projects
           </a>
           <a
-  href="/AhmadShwan-CV.pdf"
-  download
-  target="_blank"
-  class="px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition shadow-lg"
->
-  Download CV
-</a>
-
+            href="/AhmadShwan-CV.pdf"
+            download
+            target="_blank"
+            class="px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition shadow-lg"
+          >
+            Download CV
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- 🔽 Scroll-down icon -->
+    <!-- 🔽 Scroll Down Icon -->
     <div class="absolute bottom-6 z-10 animate-bounce text-primary">
       <a href="#skills">
         <i class="fas fa-angle-down text-3xl"></i>
@@ -60,44 +52,21 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
-import * as THREE from 'three'
+import { onMounted, ref } from 'vue'
 
-const vantaRef = ref(null)
 const typedText = ref(null)
-let vantaEffect = null
 
-onMounted(async () => {
-  if (!window.VANTA) {
-    const script = document.createElement('script')
-    script.src =
-      'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js'
-    script.onload = () => {
-      vantaEffect = window.VANTA.NET({
-        el: vantaRef.value,
-        THREE,
-        mouseControls: true,
-        touchControls: true,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: 0x00ffab,
-        backgroundColor: '#0f172a',
-      })
-    }
-    document.body.appendChild(script)
-  }
-
+onMounted(() => {
   const typedScript = document.createElement('script')
   typedScript.src = 'https://cdn.jsdelivr.net/npm/typed.js@2.0.12'
   typedScript.onload = () => {
     new window.Typed(typedText.value, {
       strings: [
+        'Vue.js Developer',
         'Laravel Developer',
         'Flutter Developer',
-        'AI Researcher',
-        'UI/UX Engineer',
+        'AI Developer',
+        'Independent Researcher',
         'Educator',
       ],
       typeSpeed: 60,
@@ -108,13 +77,10 @@ onMounted(async () => {
   }
   document.body.appendChild(typedScript)
 })
-
-onBeforeUnmount(() => {
-  if (vantaEffect) vantaEffect.destroy()
-})
 </script>
 
 <style scoped>
+/* 🔽 Fade In Content */
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -127,5 +93,36 @@ onBeforeUnmount(() => {
 }
 .animate-fade-in {
   animation: fade-in 1s ease-out;
+}
+
+/* ✨ Text Fade Loop */
+@keyframes fade-loop {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+.animate-fade-loop {
+  animation: fade-loop 3s ease-in-out infinite;
+}
+
+/* 🎨 Background Movement */
+@keyframes bg-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.bg-animated {
+  background: linear-gradient(270deg, #0f172a, #1e293b, #0f172a);
+  background-size: 600% 600%;
+  animation: bg-pan 10s ease infinite;
+}
+
+/* 🌬️ Floating Title */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
 </style>
