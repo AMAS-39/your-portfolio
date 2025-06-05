@@ -27,12 +27,10 @@ onMounted(() => {
   
   <HeroSection />
   <AboutMe />
-
   <SkillsSection />
   <ProjectsSection />
   <ExperienceSection />
   <AcademicsSection />
-  <AboutMe />
   <ContactMe />
 
 </template>
