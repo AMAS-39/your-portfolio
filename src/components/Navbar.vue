@@ -2,7 +2,9 @@
   <header class="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur shadow-md">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
       <!-- ✅ Logo -->
-      <h1 class="text-xl sm:text-2xl font-bold text-primary">Ahmad.dev</h1>
+<h1 class="text-xl sm:text-2xl font-bold text-primary">
+  ahmad<span class="text-cyan-400">code.tech</span>
+</h1>
 
       <!-- ✅ Desktop Nav -->
       <ul class="hidden md:flex gap-6 text-white font-medium">
