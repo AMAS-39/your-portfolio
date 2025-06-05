@@ -24,7 +24,10 @@ onMounted(() => {
 
 <template>
   <Navbar />
+  
   <HeroSection />
+  <AboutMe />
+
   <SkillsSection />
   <ProjectsSection />
   <ExperienceSection />
