@@ -1,29 +1,40 @@
 <template>
   <section
-    class="relative w-full h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 bg-animated"
+    class="relative w-full h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 bg-animated overflow-hidden"
   >
-    <!-- 🌟 Floating Dots -->
+    <!-- ✨ Floating Background Dots -->
     <div class="absolute top-10 left-10 w-4 h-4 bg-primary rounded-full animate-ping"></div>
     <div class="absolute bottom-20 right-16 w-3 h-3 bg-cyan-400 rounded-full animate-bounce"></div>
 
-    <!-- 🌟 Foreground Content -->
+<!-- 🌟 Animated Glowing Image -->
+<div class="relative mt-8 sm:mt-0 mb-2 flex justify-center">
+  <div class="absolute w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-primary blur-2xl opacity-30 animate-pulse"></div>
+  <img
+    src="/your-photo.jpg"
+    alt="Ahmad Shwan"
+    class="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full border-4 border-primary shadow-2xl object-cover hover:scale-105 transition duration-300"
+  />
+</div>
+
+
+    <!-- 🌈 Main Content -->
     <div class="z-10 w-full max-w-4xl mx-auto animate-fade-in">
-      <div class="px-4 sm:px-10">
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-cyan-400 text-transparent bg-clip-text leading-tight animate-float">
+      <div class="px-4 sm:px-10 space-y-4">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-cyan-400 text-transparent bg-clip-text leading-tight animate-float">
           Ahmad Shwan
         </h1>
 
-        <h2 class="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-4">
+        <h2 class="text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-wide">
           Full-Stack Software Developer
         </h2>
 
-        <!-- 🧠 Typing Effect -->
-        <p class="text-sm sm:text-base md:text-lg text-gray-300 min-h-[2rem] mb-6 animate-fade-loop">
+        <!-- ⌨️ Typing Effect -->
+        <p class="text-base sm:text-lg text-gray-300 min-h-[2rem] animate-fade-loop">
           <span ref="typedText"></span>
         </p>
 
-        <!-- 🎯 CTA Buttons -->
-        <div class="flex flex-wrap justify-center gap-4">
+        <!-- 🚀 Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
           <a
             href="#projects"
             class="px-6 py-3 rounded-lg bg-primary text-black font-semibold hover:bg-white hover:text-black transition shadow-lg"
@@ -42,12 +53,7 @@
       </div>
     </div>
 
-    <!-- 🔽 Scroll Down Icon -->
-    <div class="absolute bottom-6 z-10 animate-bounce text-primary">
-      <a href="#skills">
-        <i class="fas fa-angle-down text-3xl"></i>
-      </a>
-    </div>
+
   </section>
 </template>
 
@@ -80,7 +86,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* 🔽 Fade In Content */
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -95,7 +100,6 @@ onMounted(() => {
   animation: fade-in 1s ease-out;
 }
 
-/* ✨ Text Fade Loop */
 @keyframes fade-loop {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
@@ -104,7 +108,6 @@ onMounted(() => {
   animation: fade-loop 3s ease-in-out infinite;
 }
 
-/* 🎨 Background Movement */
 @keyframes bg-pan {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -116,7 +119,6 @@ onMounted(() => {
   animation: bg-pan 10s ease infinite;
 }
 
-/* 🌬️ Floating Title */
 @keyframes float {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-8px); }
