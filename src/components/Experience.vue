@@ -43,7 +43,7 @@ const experiences = [
   },
   {
     role: 'Front-End Developer',
-    company: 'Soft 4 U Company, Erbil, Iraq',
+    company: 'Soft 4 U Development Agency, Erbil, Iraq',
     duration: 'Jan 2025 – Present',
     details: [
       'Developing and maintaining front-end components of web applications',
