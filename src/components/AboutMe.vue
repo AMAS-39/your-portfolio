@@ -14,7 +14,7 @@
           name: <span class="text-yellow-300">"Ahmad Shwan"</span>,
         </div>
         <div class="pl-6 text-green-300">
-          role: <span class="text-yellow-300">"Full-Stack Developer & AI Researcher"</span>,
+          role: <span class="text-yellow-300">"AI & Full-Stack Software Engineer"</span>,
         </div>
         <div class="pl-6 text-green-300">
           location: <span class="text-yellow-300">"Erbil, Iraq"</span>,

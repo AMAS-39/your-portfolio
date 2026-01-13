@@ -19,19 +19,27 @@
 
     <!-- 🌈 Main Content -->
     <div class="z-10 w-full max-w-4xl mx-auto animate-fade-in">
-      <div class="px-4 sm:px-10 space-y-4">
+      <div class="px-4 sm:px-10 space-y-6">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-cyan-400 text-transparent bg-clip-text leading-tight animate-float">
-          Ahmad Shwan
+          AI & Full-Stack Software Engineer
         </h1>
 
-        <h2 class="text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-wide">
-          Full-Stack Software Developer
+        <h2 class="text-lg sm:text-xl lg:text-2xl font-medium text-gray-300 tracking-wide max-w-3xl mx-auto">
+          Building intelligent mobile & web systems with Flutter, Vue.js, and AI — with a strong focus on Kurdish language technology and real-world applications.
         </h2>
 
-        <!-- ⌨️ Typing Effect -->
-        <p class="text-base sm:text-lg text-gray-300 min-h-[2rem] animate-fade-loop">
-          <span ref="typedText"></span>
-        </p>
+        <!-- 🏆 Highlight Badges -->
+        <div class="flex flex-wrap justify-center gap-3 pt-2">
+          <span class="px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-sm font-semibold shadow-lg animate-pulse">
+            🏆 IEEE Best Paper Award Winner (ETECOM 2025)
+          </span>
+          <span class="px-4 py-2 rounded-full bg-gray-800 border border-primary text-primary text-sm font-medium">
+            Flutter & AI Systems Developer
+          </span>
+          <span class="px-4 py-2 rounded-full bg-gray-800 border border-primary text-primary text-sm font-medium">
+            Head of Technology & Innovation – KKYO
+          </span>
+        </div>
 
         <!-- 🚀 Buttons -->
         <div class="flex flex-wrap justify-center gap-4 pt-4">
@@ -42,10 +50,16 @@
             View Projects
           </a>
           <a
+            href="#research"
+            class="px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition shadow-lg"
+          >
+            Research & Publications
+          </a>
+          <a
             href="/AhmadShwan-CV.pdf"
             download
             target="_blank"
-            class="px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition shadow-lg"
+            class="px-6 py-3 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition shadow-lg"
           >
             Download CV
           </a>
@@ -58,31 +72,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-
-const typedText = ref(null)
-
-onMounted(() => {
-  const typedScript = document.createElement('script')
-  typedScript.src = 'https://cdn.jsdelivr.net/npm/typed.js@2.0.12'
-  typedScript.onload = () => {
-    new window.Typed(typedText.value, {
-      strings: [
-        'Vue.js Developer',
-        'Laravel Developer',
-        'Flutter Developer',
-        'AI Developer',
-        'Independent Researcher',
-        'Educator',
-      ],
-      typeSpeed: 60,
-      backSpeed: 30,
-      backDelay: 1500,
-      loop: true,
-    })
-  }
-  document.body.appendChild(typedScript)
-})
+// Hero section component - no script needed
 </script>
 
 <style scoped>
@@ -100,13 +90,6 @@ onMounted(() => {
   animation: fade-in 1s ease-out;
 }
 
-@keyframes fade-loop {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
-}
-.animate-fade-loop {
-  animation: fade-loop 3s ease-in-out infinite;
-}
 
 @keyframes bg-pan {
   0% { background-position: 0% 50%; }

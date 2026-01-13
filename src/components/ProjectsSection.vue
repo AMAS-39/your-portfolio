@@ -1,52 +1,222 @@
 <template>
   <section id="projects" class="bg-background text-white py-20 px-6">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl sm:text-5xl font-bold text-primary mb-12">My Projects</h2>
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl sm:text-5xl font-bold text-primary mb-12 text-center">My Projects</h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        <div
-          v-for="(project, index) in projects"
-          :key="index"
-          class="bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
-        >
-          <div class="p-6 flex flex-col h-full">
-            <h3 class="text-2xl font-semibold mb-2 text-primary">{{ project.title }}</h3>
-            <p class="text-gray-300 text-sm flex-1">{{ project.description }}</p>
-
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span
-                v-for="tag in project.tags"
-                :key="tag"
-                class="text-xs px-3 py-1 bg-gray-700 text-gray-200 rounded-full"
-              >
-                {{ tag }}
-              </span>
+      <!-- Featured AI & Research Projects -->
+      <div class="mb-16" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-cyan-400 mb-8 flex items-center gap-3">
+          <span class="text-3xl">🚀</span> Featured AI & Research Projects
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="(project, index) in featuredProjects"
+            :key="index"
+            class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 border-l-4 border-cyan-400"
+          >
+            <div class="p-6 flex flex-col h-full">
+              <h3 class="text-xl font-semibold mb-2 text-primary">{{ project.title }}</h3>
+              <p class="text-gray-300 text-sm flex-1 mb-3">{{ project.description }}</p>
+              
+              <p v-if="project.impact" class="text-gray-400 text-xs italic mb-3">
+                <span class="text-primary font-medium">Impact:</span> {{ project.impact }}
+              </p>
+              
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    v-for="tag in project.tags"
+                    :key="tag"
+                    class="text-xs px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full border border-cyan-700"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
+                <div class="flex gap-2 justify-start flex-wrap">
+                  <a
+                    v-if="project.live"
+                    :href="project.live"
+                    target="_blank"
+                    class="px-4 py-2 rounded-lg bg-primary text-black font-medium hover:bg-white transition text-sm"
+                  >
+                    Live
+                  </a>
+                  <a
+                    v-if="project.github"
+                    :href="project.github"
+                    target="_blank"
+                    class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition text-sm"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="mt-6 flex gap-4 justify-center flex-wrap">
-              <a
-                v-if="project.live"
-                :href="project.live"
-                target="_blank"
-                class="px-4 py-2 rounded-lg bg-primary text-black font-medium hover:bg-white transition"
-              >
-                Live
-              </a>
-              <a
-                v-if="project.github"
-                :href="project.github"
-                target="_blank"
-                class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition"
-              >
-                GitHub
-              </a>
-              <button
-                v-if="project.images"
-                @click="openModal(project)"
-                class="px-4 py-2 rounded-lg border border-gray-400 text-gray-300 hover:bg-gray-700 transition"
-              >
-                View Images
-              </button>
+      <!-- Production & Client Systems -->
+      <div class="mb-16" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-cyan-400 mb-8 flex items-center gap-3">
+          <span class="text-3xl">💼</span> Production & Client Systems
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="(project, index) in productionProjects"
+            :key="index"
+            class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div class="p-6 flex flex-col h-full">
+              <h3 class="text-xl font-semibold mb-2 text-primary">{{ project.title }}</h3>
+              <p class="text-gray-300 text-sm flex-1 mb-3">{{ project.description }}</p>
+              
+              <p v-if="project.impact" class="text-gray-400 text-xs italic mb-3">
+                <span class="text-primary font-medium">Impact:</span> {{ project.impact }}
+              </p>
+              
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    v-for="tag in project.tags"
+                    :key="tag"
+                    class="text-xs px-3 py-1 bg-gray-700 text-gray-200 rounded-full"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
+                <div class="flex gap-2 justify-start flex-wrap">
+                  <a
+                    v-if="project.live"
+                    :href="project.live"
+                    target="_blank"
+                    class="px-4 py-2 rounded-lg bg-primary text-black font-medium hover:bg-white transition text-sm"
+                  >
+                    Live
+                  </a>
+                  <a
+                    v-if="project.github"
+                    :href="project.github"
+                    target="_blank"
+                    class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition text-sm"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Systems, Platforms & Web -->
+      <div class="mb-16" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-cyan-400 mb-8 flex items-center gap-3">
+          <span class="text-3xl">⚙️</span> Systems, Platforms & Web
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="(project, index) in systemsProjects"
+            :key="index"
+            class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div class="p-6 flex flex-col h-full">
+              <h3 class="text-xl font-semibold mb-2 text-primary">{{ project.title }}</h3>
+              <p class="text-gray-300 text-sm flex-1 mb-3">{{ project.description }}</p>
+              
+              <p v-if="project.impact" class="text-gray-400 text-xs italic mb-3">
+                <span class="text-primary font-medium">Impact:</span> {{ project.impact }}
+              </p>
+              
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    v-for="tag in project.tags"
+                    :key="tag"
+                    class="text-xs px-3 py-1 bg-gray-700 text-gray-200 rounded-full"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
+                <div class="flex gap-2 justify-start flex-wrap">
+                  <a
+                    v-if="project.live"
+                    :href="project.live"
+                    target="_blank"
+                    class="px-4 py-2 rounded-lg bg-primary text-black font-medium hover:bg-white transition text-sm"
+                  >
+                    Live
+                  </a>
+                  <a
+                    v-if="project.github"
+                    :href="project.github"
+                    target="_blank"
+                    class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition text-sm"
+                  >
+                    GitHub
+                  </a>
+                  <button
+                    v-if="project.images"
+                    @click="openModal(project)"
+                    class="px-4 py-2 rounded-lg border border-gray-400 text-gray-300 hover:bg-gray-700 transition text-sm"
+                  >
+                    View Images
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events / Impact Work -->
+      <div data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-cyan-400 mb-8 flex items-center gap-3">
+          <span class="text-3xl">🌟</span> Events / Impact Work
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="(project, index) in impactWork"
+            :key="index"
+            class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-transform duration-300 border-l-4 border-yellow-500"
+          >
+            <div class="p-6 flex flex-col h-full">
+              <h3 class="text-xl font-semibold mb-2 text-primary">{{ project.title }}</h3>
+              <p class="text-gray-300 text-sm flex-1 mb-3">{{ project.description }}</p>
+              
+              <p v-if="project.impact" class="text-gray-400 text-xs italic mb-3">
+                <span class="text-primary font-medium">Impact:</span> {{ project.impact }}
+              </p>
+              
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    v-for="tag in project.tags"
+                    :key="tag"
+                    class="text-xs px-3 py-1 bg-yellow-900/50 text-yellow-300 rounded-full border border-yellow-700"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
+                <div class="flex gap-2 justify-start flex-wrap">
+                  <a
+                    v-if="project.live"
+                    :href="project.live"
+                    target="_blank"
+                    class="px-4 py-2 rounded-lg bg-primary text-black font-medium hover:bg-white transition text-sm"
+                  >
+                    Live
+                  </a>
+                  <a
+                    v-if="project.github"
+                    :href="project.github"
+                    target="_blank"
+                    class="px-4 py-2 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition text-sm"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -90,85 +260,132 @@ const openModal = (project) => {
   showModal.value = true
 }
 
-const projects = [
+const featuredProjects = [
+  {
+    title: 'Let Me Pass – AI Parking Communication System',
+    description:
+      'Flutter application with YOLOv8-based license plate recognition, real-time driver chat, and optimized notification workflows.',
+    tags: ['Flutter', 'YOLOv8', 'Computer Vision', 'Real-time'],
+    impact: 'faster parking conflict resolution',
+    live: '',
+    github: '',
+  },
+  {
+    title: 'CAMK – Kurdish Academic Social Platform',
+    description:
+      'Cross-platform academic platform built with Vue.js, Laravel, and Flutter, promoting Kurdish digital content for AI training and education.',
+    tags: ['Vue.js', 'Laravel', 'Flutter', 'Kurdish AI Data'],
+    live: '',
+    github: '',
+  },
   {
     title: 'TIU AI Chatbot',
-    description: 'Multilingual chatbot (Kurdish, English, Arabic) to assist Computer Education Department at TIU.',
-    tags: ['Vue.js', 'NLP', 'OpenAI', 'Flask'],
+    description:
+      'Multilingual chatbot (Kurdish, Arabic, English) developed for the Computer Education Department at TIU.',
+    tags: ['NLP', 'Multilingual', 'Chatbot'],
+    live: '',
     github: '',
-    live: '',
   },
+]
+
+const productionProjects = [
   {
-    title: 'Chemk – Academic Platform',
-    description: 'Kurdish academic social platform built using Vue, Laravel, and Flutter.',
-    tags: ['Vue.js', 'Laravel', 'Flutter'],
+    title: 'MasterMind Jobs',
+    description:
+      'Cross-platform job marketplace (iOS & Android) featuring AI-driven recommendations, real-time chat, and company dashboards; published on App Store and Google Play.',
+    tags: ['Flutter', 'Firebase', 'Flask', 'AI'],
+    impact: 'job matching + real-time communication',
+    live: '',
     github: '',
-    live: '',
   },
   {
-    title: 'KKYO Volunteer System',
-    description: 'Volunteer management system with department heads, point tracking, and structured roles.',
-    tags: ['Laravel', 'Admin Panel'],
-    github: 'https://github.com/AMAS-39/kkyo_volunteer_system',
+    title: 'Cars Colosseum Platform',
+    description:
+      'End-to-end development of a mobile application and backend system for locating second-hand car parts and service centers across Kurdistan.',
+    tags: ['React Native', 'Laravel', 'Mobile', 'APIs'],
     live: '',
-  },
-  {
-    title: 'Let Me Pass – AI Access System',
-    description: 'AI-based secure access system using face detection and automation, presented at ICASEE 2025.',
-    tags: ['Python', 'OpenCV', 'AI'],
     github: '',
-    live: '',
   },
   {
-    title: 'MemoryMate AI',
-    description: 'Alzheimer assistant with activity tracking, live location, voice assistant, and caregiver dashboard.',
-    tags: ['Flutter', 'AI', 'Firebase'],
+    title: 'Logistics Applications',
+    description:
+      'Contributed to multiple logistics-focused mobile applications supporting operational tracking and delivery workflows (Kosto Log, Ramze Bazzaz, China Stars Log).',
+    tags: ['Flutter', 'Logistics', 'Tracking'],
+    live: '',
     github: '',
-    live: '',
-  },
-  {
-    title: 'Menu Builder (Multilingual)',
-    description: 'Lightning-fast restaurant menu builder supporting Kurdish, Arabic, and English using Laravel.',
-    tags: ['Laravel', 'Localization'],
-    github: '',
-    live: '',
-  },
-  {
-    title: 'KKYO Website & Admin Panel',
-    description: 'Built the full website and admin dashboard for KKYO to manage events and members. Improved coordination between department heads.',
-    tags: ['Vue.js', 'Flask', 'Admin'],
-    github: 'https://github.com/AMAS-39/kkyo-website',
-    live: 'https://www.kkyo.org',
   },
   {
     title: 'Nice Village App – Backend',
-    description: 'Created Flask + Firebase backend for a real-time app with authentication and performance APIs.',
-    tags: ['Flask', 'Firebase'],
-    github: '',
+    description:
+      'Backend development and API integration for a Flutter application with real-time data and authentication.',
+    tags: ['Flask', 'Firebase', 'REST API', 'Auth'],
     live: '',
+    github: '',
+  },
+]
+
+const systemsProjects = [
+  {
+    title: 'S4YMS – Soft4U Internal Developer System',
+    description:
+      'Part of the core team developing an internal management system for developers, supporting workflow organization and technical operations.',
+    tags: ['Internal System', 'Workflow'],
+    live: '',
+    github: '',
   },
   {
-    title: 'Dynamic Menu UI – Vue.js',
-    description: 'Frontend UI for the menu builder with real-time responsiveness using Vue and Tailwind.',
-    tags: ['Vue.js', 'Tailwind CSS'],
-    github: '',
-    live: '',
-  },
-  {
-    title: 'Halabja Memorial Website',
-    description: 'Developed a historical site for Halabja’s memory with 3D monument exploration.',
-    tags: ['3D View', 'Vue.js'],
-    github: 'https://github.com/AMAS-39/halabja-memorial',
-    live: 'https://amas-39.github.io/halabja-memorial/?fbclid=IwY2xjawKubZVleHRuA2FlbQIxMABicmlkETFFdFVSS2NjQ2xLYzltMU15AR7tmtFraVHZv7eDMckO0DPDXZj5Qabo0tikqWn3bz6mp1VzKHTlO5uZx1SndQ_aem_8bcD4gO-5PgEOCvx_G5ODA',
+    title: 'KKYO Website & Admin Panel',
+    description:
+      'Designed and developed the official KKYO website and admin system, improving coordination among departments.',
+    tags: ['Vue.js', 'Flask', 'Admin Panel'],
+    impact: 'improved coordination across departments',
+    live: 'https://www.kkyo.org',
+    github: 'https://github.com/AMAS-39/kkyo-website',
   },
   {
     title: 'Gym Management System',
-    description: 'Admin, Trainer, and User dashboards, workout scheduler, and progress tracker built with Laravel.',
-    tags: ['Laravel', 'Dashboard'],
-    github: 'https://github.com/AMAS-39/gym-management',
+    description:
+      'Full gym management system with Admin, Trainer, and User dashboards, workout scheduling, and progress tracking.',
+    tags: ['Laravel', 'Dashboards', 'Scheduling'],
+    images: ['src/assets/images/home.png', 'src/assets/images/login.png'],
     live: '',
-    images: ['src/assets/images/home.png', 'src/assets/images/login.png']
-  }
+    github: '',
+  },
+  {
+    title: 'Multi-Language Dynamic Menu Builder',
+    description:
+      'Restaurant menu system supporting Kurdish, Arabic, and English.',
+    tags: ['Laravel', 'Localization', 'Multilingual'],
+    live: '',
+    github: '',
+  },
+  {
+    title: 'Cactus RIE Website',
+    description:
+      'Developed the front-end using Vue.js, focusing on clean UI and responsive design.',
+    tags: ['Vue.js', 'Responsive UI'],
+    live: '',
+    github: '',
+  },
+  {
+    title: 'Halabja Memorial Website',
+    description:
+      'Memorial website featuring historical content and an interactive 3D monument view.',
+    tags: ['Web', '3D', 'Interactive'],
+    live: '',
+    github: '',
+  },
+]
+
+const impactWork = [
+  {
+    title: 'Korea Week Festival 2025 – IT Support Manager',
+    description:
+      'Led IT operations and implemented a QR-based registration system for a two-day international festival (TIU & Korean Consulate, Erbil).',
+    tags: ['QR System', 'Event IT', 'Operations'],
+    live: '',
+    github: '',
+  },
 ]
 </script>
 

@@ -32,50 +32,77 @@
 <script setup>
 const experiences = [
   {
-    role: 'Head of Technology & Innovation',
+    role: 'Full-Stack Software Developer (Part-Time)',
+    company: 'Cars Colosseum Company – Erbil, Iraq',
+    duration: 'Nov 2025 – Present',
+    details: [
+      'Developing and maintaining a cross-platform mobile application using React Native with a Laravel backend.',
+      'Designing RESTful APIs, handling database logic, authentication, and core system features.',
+      'Integrating mobile and backend systems to ensure secure, scalable, and efficient data flow.'
+    ]
+  },
+  {
+    role: 'Mobile Application Developer (Part-Time)',
+    company: 'TechEye Company – Erbil, Iraq',
+    duration: 'Jul 2025 – Present',
+    details: [
+      'Building and maintaining Flutter applications integrated with Firebase services.',
+      'Collaborating with backend and design teams to deliver high-performance mobile solutions.',
+      'Implementing real-time features and AI-driven functionality.'
+    ]
+  },
+  {
+    role: 'Front-End & AI Developer',
+    company: 'Soft 4 You Agency – Erbil, Iraq (Remote)',
+    duration: 'Jan 2025 – Present',
+    details: [
+      'Developing AI-enhanced UI/UX components and intelligent web interfaces.',
+      'Integrating Vue.js front-ends with Flask backends for smart, data-driven applications.'
+    ]
+  },
+  {
+    role: 'Computer Science Teacher Intern',
+    company: 'Cambridge International Kurdistan School – Erbil, Iraq',
+    duration: 'Oct 2025 – Present',
+    details: [
+      'Teaching programming fundamentals and computational thinking to high-school students.',
+      'Designing simplified learning materials for Python and C++, and supervising small coding projects.'
+    ]
+  },
+  {
+    role: 'Head of Technology & Innovation Department',
     company: 'Korea Kurdistan Youth Organization (KKYO)',
     duration: 'Dec 2024 – Present',
     details: [
-      'Leading the Technology & Innovation Department',
-      'Developed the KKYO Website & Admin Panel (Vue.js & Flask)',
-      'Managing tech-driven initiatives to enhance digital transformation'
-    ]
-  },
-  {
-    role: 'Front-End Developer',
-    company: 'Soft 4 U Development Agency, Erbil, Iraq',
-    duration: 'Jan 2025 – Present',
-    details: [
-      'Developing and maintaining front-end components of web applications',
-      'Collaborating with design/backend teams to improve UI/UX',
-      'Ensuring the technical feasibility of UI designs'
-    ]
-  },
-  {
-    role: 'Student Representative',
-    company: 'Computer Education Department, TIU',
-    duration: 'Oct 2024 – Present',
-    details: [
-      'Representing students in academic and administrative discussions',
-      'Organizing meetings, workshops, and addressing student concerns'
-    ]
-  },
-  {
-    role: 'Assistant Lecturer Intern',
-    company: 'Optimal Source Development – Code Lab, Erbil',
-    duration: 'Oct 2024 – Dec 2024',
-    details: [
-      'Assisted in teaching Scratch to children and teenagers',
-      'Supported classroom activities and answered queries'
+      'Leading technology initiatives and managing the Technology & Innovation Department.',
+      'Designed and developed the KKYO website and admin system using Vue.js and Flask.'
     ]
   },
   {
     role: 'Front-End Developer Intern',
-    company: 'Pirmam Company, Erbil, Iraq',
+    company: 'Soft 4 You Agency – Erbil, Iraq (Remote)',
+    duration: 'Jun 2024 – Dec 2024',
+    details: [
+      'Assisted in front-end development using Vue.js and Tailwind CSS.',
+      'Collaborated with designers and backend developers on responsive UI and API integration.'
+    ]
+  },
+  {
+    role: 'Front-End Developer Intern',
+    company: 'Pirmam Company – Erbil, Iraq',
     duration: 'Aug 2024 – Oct 2024',
     details: [
-      'Assisted in UI development for client projects',
-      'Gained practical experience in modern web technologies'
+      'Assisting in developing user interfaces for client projects.',
+      'Gaining practical experience in modern web development technologies.'
+    ]
+  },
+  {
+    role: 'Assistant Lecturer Intern',
+    company: 'Optimal Source Development – Code Lab – Erbil, Iraq',
+    duration: 'Oct 2024 – Dec 2024',
+    details: [
+      'Assisting in teaching Scratch programming to children and teenagers.',
+      'Supporting hands-on classroom activities and student exercises.'
     ]
   }
 ];

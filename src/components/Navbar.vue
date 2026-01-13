@@ -8,10 +8,11 @@
 
       <!-- ✅ Desktop Nav -->
       <ul class="hidden md:flex gap-6 text-white font-medium">
-        <li><a href="#about" class="hover:text-primary transition">About</a></li>
-        <li><a href="#skills" class="hover:text-primary transition">Skills</a></li>
         <li><a href="#projects" class="hover:text-primary transition">Projects</a></li>
-        <li><a href="#academics" class="hover:text-primary transition">Academics</a></li>
+        <li><a href="#research" class="hover:text-primary transition">Research</a></li>
+        <li><a href="#experience" class="hover:text-primary transition">Experience</a></li>
+        <li><a href="#leadership" class="hover:text-primary transition">Leadership</a></li>
+        <li><a href="#skills" class="hover:text-primary transition">Skills</a></li>
         <li><a href="#about" class="hover:text-primary transition">About</a></li>
         <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
       </ul>
@@ -32,10 +33,12 @@
         v-if="menuOpen"
         class="md:hidden bg-background/90 backdrop-blur px-6 pb-6 pt-4 text-center text-white font-medium space-y-4 shadow-md"
       >
-        <a href="#about" class="block hover:text-primary" @click="closeMenu">About</a>
-        <a href="#skills" class="block hover:text-primary" @click="closeMenu">Skills</a>
         <a href="#projects" class="block hover:text-primary" @click="closeMenu">Projects</a>
-        <a href="#academics" class="block hover:text-primary" @click="closeMenu">Academics</a>
+        <a href="#research" class="block hover:text-primary" @click="closeMenu">Research</a>
+        <a href="#experience" class="block hover:text-primary" @click="closeMenu">Experience</a>
+        <a href="#leadership" class="block hover:text-primary" @click="closeMenu">Leadership</a>
+        <a href="#skills" class="block hover:text-primary" @click="closeMenu">Skills</a>
+        <a href="#about" class="block hover:text-primary" @click="closeMenu">About</a>
         <a href="#contact" class="block hover:text-primary" @click="closeMenu">Contact</a>
       </div>
     </transition>
