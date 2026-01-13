@@ -1,57 +1,57 @@
 <template>
   <section
-    class="relative w-full h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 bg-animated overflow-hidden"
+    class="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 bg-animated overflow-hidden pt-20 sm:pt-24"
   >
     <!-- ✨ Floating Background Dots -->
     <div class="absolute top-10 left-10 w-4 h-4 bg-primary rounded-full animate-ping"></div>
     <div class="absolute bottom-20 right-16 w-3 h-3 bg-cyan-400 rounded-full animate-bounce"></div>
 
 <!-- 🌟 Animated Glowing Image -->
-<div class="relative mt-8 sm:mt-0 mb-2 flex justify-center">
-  <div class="absolute w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-primary blur-2xl opacity-30 animate-pulse"></div>
+<div class="relative mb-4 sm:mb-6 flex justify-center">
+  <div class="absolute w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52 rounded-full bg-primary blur-2xl opacity-30 animate-pulse"></div>
   <img
     src="/your-photo.jpg"
     alt="Ahmad Shwan"
-    class="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full border-4 border-primary shadow-2xl object-cover hover:scale-105 transition duration-300"
+    class="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-primary shadow-2xl object-cover hover:scale-105 transition duration-300"
   />
 </div>
 
 
     <!-- 🌈 Main Content -->
     <div class="z-10 w-full max-w-4xl mx-auto animate-fade-in">
-      <div class="px-4 sm:px-10 space-y-6">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-cyan-400 text-transparent bg-clip-text leading-tight animate-float">
+      <div class="px-4 sm:px-6 lg:px-10 space-y-5 sm:space-y-6">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-primary to-cyan-400 text-transparent bg-clip-text leading-tight animate-float px-2">
           AI & Full-Stack Software Engineer
         </h1>
 
-        <h2 class="text-lg sm:text-xl lg:text-2xl font-medium text-gray-300 tracking-wide max-w-3xl mx-auto">
+        <h2 class="text-base sm:text-lg lg:text-xl font-medium text-gray-300 tracking-wide max-w-3xl mx-auto px-2">
           Building intelligent mobile & web systems with Flutter, Vue.js, and AI — with a strong focus on Kurdish language technology and real-world applications.
         </h2>
 
         <!-- 🏆 Highlight Badges -->
-        <div class="flex flex-wrap justify-center gap-3 pt-2">
-          <span class="px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-sm font-semibold shadow-lg animate-pulse">
-            🏆 IEEE Best Paper Award Winner (ETECOM 2025)
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 pt-2 px-2">
+          <span class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-xs sm:text-sm font-semibold shadow-lg whitespace-nowrap">
+            🏆 IEEE Best Paper Award (ETECOM 2025)
           </span>
-          <span class="px-4 py-2 rounded-full bg-gray-800 border border-primary text-primary text-sm font-medium">
+          <span class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gray-800 border border-primary text-primary text-xs sm:text-sm font-medium whitespace-nowrap">
             Flutter & AI Systems Developer
           </span>
-          <span class="px-4 py-2 rounded-full bg-gray-800 border border-primary text-primary text-sm font-medium">
+          <span class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gray-800 border border-primary text-primary text-xs sm:text-sm font-medium whitespace-nowrap">
             Head of Technology & Innovation – KKYO
           </span>
         </div>
 
         <!-- 🚀 Buttons -->
-        <div class="flex flex-wrap justify-center gap-4 pt-4">
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-4 pt-4 px-2">
           <a
             href="#projects"
-            class="px-6 py-3 rounded-lg bg-primary text-black font-semibold hover:bg-white hover:text-black transition shadow-lg"
+            class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg bg-primary text-black font-semibold hover:bg-white hover:text-black transition shadow-lg text-sm sm:text-base"
           >
             View Projects
           </a>
           <a
             href="#research"
-            class="px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition shadow-lg"
+            class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-black transition shadow-lg text-sm sm:text-base"
           >
             Research & Publications
           </a>
@@ -59,7 +59,7 @@
             href="/AhmadShwan-CV.pdf"
             download
             target="_blank"
-            class="px-6 py-3 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition shadow-lg"
+            class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition shadow-lg text-sm sm:text-base"
           >
             Download CV
           </a>
